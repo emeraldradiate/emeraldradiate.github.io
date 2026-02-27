@@ -41,7 +41,10 @@ function ArtistPortfolio() {
   const projectData = {
     title: "Artist Portfolio",
     tagline: "A modern portfolio redesign for a digital artist",
-    hero: "/project2.png",
+    
+    // YouTube URL for embedded video at the top
+    youtubeUrl: "https://www.youtube.com/watch?v=VIDEO_ID",
+    
     overview: "A SquareSpace website redesign on both mobile and web platforms...",
     role: "Designer & Developer",
     timeline: "3 weeks",
@@ -146,7 +149,8 @@ The `ProjectDetail` component accepts the following fields:
 
 ### Optional but Recommended
 - **tagline** (string) - Brief description shown under title
-- **hero** (string) - Path to main hero image
+- **youtubeUrl** (string) - YouTube video URL to embed at top (e.g., "https://www.youtube.com/watch?v=VIDEO_ID")
+  - Supports standard YouTube URLs (youtube.com/watch), short URLs (youtu.be), and embed URLs
 - **overview** (string) - Detailed project description
 - **role** (string) - Your role in the project
 - **timeline** (string) - How long the project took

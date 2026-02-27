@@ -7,8 +7,7 @@ function ProjectDetail({ data }) {
   const {
     title,
     tagline,
-    hero,
-    video,
+    youtubeUrl,
     overview,
     divider = "/divide.png",
     role,
@@ -23,6 +22,30 @@ function ProjectDetail({ data }) {
     liveUrl,
     githubUrl
   } = data;
+
+  // convert YouTube URL to embed URL
+  const getYouTubeEmbedUrl = (url) => {
+    if (!url) return null;
+    
+    // handle diff YouTube URL formats
+    let videoId = null;
+    
+    // Format: https://www.youtube.com/watch?v=VIDEO_ID
+    if (url.includes('youtube.com/watch')) {
+      const urlParams = new URLSearchParams(new URL(url).search);
+      videoId = urlParams.get('v');
+    }
+    // Format: https://youtu.be/VIDEO_ID
+    else if (url.includes('youtu.be/')) {
+      videoId = url.split('youtu.be/')[1]?.split('?')[0];
+    }
+    // Format: https://www.youtube.com/embed/VIDEO_ID (already embed format)
+    else if (url.includes('youtube.com/embed/')) {
+      return url;
+    }
+    
+    return videoId ? `https://www.youtube.com/embed/${videoId}` : null;
+  };
 
   const [lightboxImage, setLightboxImage] = useState(null);
   const [lightboxIndex, setLightboxIndex] = useState(0);
@@ -192,10 +215,10 @@ function ProjectDetail({ data }) {
       <Navigation isHomePage={false} />
 
       {/* hero section */}
-      <section className="relative pt-34 pb-12 px-6 overflow-hidden">
+      <section className="relative pt-34 pb-12 px-6 md:px-12 lg:px-24 overflow-hidden">
         <div className="absolute inset-0" style={{background: 'linear-gradient(to bottom right, rgba(134, 65, 152, 0.3), black, rgba(137, 197, 65, 0.3)'}}></div>
         
-        <div className="relative max-w-6xl mx-auto">
+        <div className="relative max-w-5xl mx-auto">
           <div className="mb-10">
             <h1 className="text-5xl md:text-6xl mb-3" style={{fontFamily: "'Limelight', sans-serif", color: '#89C541', letterSpacing: '-0.02em'}}>
               {title}
@@ -298,39 +321,39 @@ function ProjectDetail({ data }) {
             </div>
           </div>
 
-          {/* img or video in hero */}
-          {video ? (
+          {/* YouTube video embed */}
+          {youtubeUrl && (
             <div className="rounded-2xl overflow-hidden" style={{
               border: '1px solid rgba(134, 65, 152, 0.3)',
-              boxShadow: '0 8px 32px rgba(134, 65, 152, 0.2)'
+              boxShadow: '0 8px 32px rgba(134, 65, 152, 0.2)',
+              position: 'relative',
+              paddingBottom: '56.25%', // 16:9 aspect ratio
+              height: 0
             }}>
-              <video 
-                className="w-full h-auto" 
-                controls
+              <iframe 
+                src={getYouTubeEmbedUrl(youtubeUrl)}
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
                 style={{
-                  backgroundColor: '#000',
-                  display: 'block'
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  width: '100%',
+                  height: '100%',
+                  backgroundColor: '#000'
                 }}
-              >
-                <source src={video} type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
+              />
             </div>
-          ) : hero ? (
-            <div className="rounded-2xl overflow-hidden" style={{
-              border: '1px solid rgba(134, 65, 152, 0.3)',
-              boxShadow: '0 8px 32px rgba(134, 65, 152, 0.2)'
-            }}>
-              <img src={hero} alt={title} className="w-full h-auto" />
-            </div>
-          ) : null}
+          )}
         </div>
       </section>
 
       {/* overview */}
       {overview && (
-        <section className="py-12 px-6 bg-black">
-          <div className="max-w-4xl mx-auto">
+        <section className="py-12 px-6 md:px-12 lg:px-24 bg-black">
+          <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl mb-5" style={{fontFamily: "'Limelight', sans-serif", color: '#89C541'}}>
               Overview
             </h2>
@@ -356,8 +379,8 @@ function ProjectDetail({ data }) {
 
       {/* challenge & solution sections */}
       {(challenge || solution) && (
-        <section className="pt-0 pb-6 px-6 bg-black">
-          <div className="max-w-6xl mx-auto">
+        <section className="pt-0 pb-6 px-6 md:px-12 lg:px-24 bg-black">
+          <div className="max-w-5xl mx-auto">
             <div className="flex flex-col lg:flex-row gap-6 lg:gap-10 items-center">
               {challenge && (
                 <div className="flex-1 text-right">
@@ -394,8 +417,8 @@ function ProjectDetail({ data }) {
 
       {/* key features section */}
       {features && features.length > 0 && (
-        <section className="py-12 px-6 bg-black">
-          <div className="max-w-6xl mx-auto">
+        <section className="py-12 px-6 md:px-12 lg:px-24 bg-black">
+          <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl mb-10 text-center" style={{fontFamily: "'Limelight', sans-serif", color: '#89C541'}}>
               Key Features
             </h2>
@@ -424,8 +447,8 @@ function ProjectDetail({ data }) {
 
       {/* screenshot gallery */}
       {images && images.length > 0 && (
-        <section className="py-12 px-6 bg-black">
-          <div className="max-w-6xl mx-auto">
+        <section className="py-12 px-6 md:px-12 lg:px-24 bg-black">
+          <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl mb-10 text-center" style={{fontFamily: "'Limelight', sans-serif", color: '#89C541'}}>
               Project Showcase
             </h2>
@@ -490,8 +513,8 @@ function ProjectDetail({ data }) {
 
       {/* outcomes */}
       {outcomes && outcomes.length > 0 && (
-        <section className="py-12 px-6 bg-black">
-          <div className="max-w-4xl mx-auto">
+        <section className="py-12 px-6 md:px-12 lg:px-24 bg-black">
+          <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl mb-6" style={{fontFamily: "'Limelight', sans-serif", color: '#89C541'}}>
               Goals Met & Lessons Learned
             </h2>
@@ -512,8 +535,8 @@ function ProjectDetail({ data }) {
       )}
 
       {/* next project nav */}
-      <section className="py-12 px-6 bg-black" style={{borderTop: '1px solid rgba(134, 65, 152, 0.2)'}}>
-        <div className="max-w-4xl mx-auto text-center">
+      <section className="py-12 px-6 md:px-12 lg:px-24 bg-black" style={{borderTop: '1px solid rgba(134, 65, 152, 0.2)'}}>
+        <div className="max-w-5xl mx-auto text-center">
           <Link 
             to="/"
             className="inline-flex items-center gap-1.5 px-6 py-3 rounded-full transition text-base"
@@ -530,8 +553,8 @@ function ProjectDetail({ data }) {
       </section>
 
       {/* footer */}
-      <footer className="py-6 px-6 bg-black" style={{borderTop: '1px solid rgba(134, 65, 152, 0.2)'}}>
-        <div className="max-w-7xl mx-auto text-center" style={{fontFamily: "'Lora', serif", color: '#ccc'}}>
+      <footer className="py-6 px-6 md:px-12 lg:px-24 bg-black" style={{borderTop: '1px solid rgba(134, 65, 152, 0.2)'}}>
+        <div className="max-w-5xl mx-auto text-center" style={{fontFamily: "'Lora', serif", color: '#ccc'}}>
           <p>&copy; 2026 Kara Welch. All rights reserved.</p>
         </div>
       </footer>
@@ -543,8 +566,7 @@ ProjectDetail.propTypes = {
   data: PropTypes.shape({
     title: PropTypes.string.isRequired,
     tagline: PropTypes.string,
-    hero: PropTypes.string,
-    video: PropTypes.string,
+    youtubeUrl: PropTypes.string,
     overview: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.string)]),
     divider: PropTypes.string,
     role: PropTypes.string,

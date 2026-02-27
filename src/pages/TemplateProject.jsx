@@ -5,9 +5,9 @@ function TemplateProject() {
     title: "Project Title Here",
     tagline: "Placeholder tagline for your project - brief description goes here.",
     
-    // Use either 'video' OR 'hero' (image), not both
-    // video: "/your-video.mp4",
-    hero: "/your-hero-image.png",
+    // YouTube URL (will be embedded at the top)
+    // Example: "https://www.youtube.com/watch?v=VIDEO_ID" or "https://youtu.be/VIDEO_ID"
+    youtubeUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
     
     overview: [
       "Placeholder paragraph 1. Replace this with your project overview text.",

@@ -80,15 +80,8 @@ function TechnicalWork() {
         <Navigation isHomePage={false} />
 
         {/* hero */}
-        <section className="relative px-6 md:px-12 lg:px-24 xl:px-40 pt-32 pb-4">
+        <section className="relative px-6 md:px-12 lg:px-24 pt-32 pb-4">
           <div className="absolute inset-0" style={{background: 'linear-gradient(to bottom right, rgba(134, 65, 152, 0.3), black, rgba(137, 197, 65, 0.3)'}}></div>
-          
-          {/* rotating sparkle */}
-          <div className="absolute sparkle-spin left-12 lg:left-24 xl:left-55" style={{top: '130px', zIndex: 0, opacity: 0.3}}>
-            <svg width="100" height="100" viewBox="0 0 200 200" fill="none">
-              <path d="M100 0L110 90L200 100L110 110L100 200L90 110L0 100L90 90L100 0Z" fill="#864198" />
-            </svg>
-          </div>
           
           <div className="relative max-w-5xl mx-auto text-right">
             <h1 className="text-5xl md:text-6xl mb-4" style={{fontFamily: "'Limelight', sans-serif", color: '#89C541', letterSpacing: '0em'}}>
@@ -101,7 +94,7 @@ function TechnicalWork() {
         </section>
 
         {/* filters */}
-        <section className="pt-6 pb-0 px-6 bg-black">
+        <section className="pt-6 pb-0 px-6 md:px-12 lg:px-24 bg-black">
           <div className="max-w-5xl mx-auto">
             <div className="mb-6">
               <h3 className="text-lg mb-3" style={{fontFamily: "'Limelight', sans-serif", color: '#864198'}}>
@@ -141,7 +134,7 @@ function TechnicalWork() {
         </section>
 
         {/* projects */}
-        <section className="py-6 px-6 bg-black">
+        <section className="py-6 px-6 md:px-12 lg:px-24 bg-black">
           <div className="max-w-5xl mx-auto">
             {filteredProjects.length === 0 ? (
               <div className="text-center py-12">
@@ -230,8 +223,8 @@ function TechnicalWork() {
         </section>
 
         {/* foot */}
-        <footer className="py-6 px-6 bg-black" style={{borderTop: '1px solid rgba(134, 65, 152, 0.2)'}}>
-          <div className="max-w-7xl mx-auto text-center" style={{fontFamily: "'Lora', serif", color: '#ccc'}}>
+        <footer className="py-6 px-6 md:px-12 lg:px-24 bg-black" style={{borderTop: '1px solid rgba(134, 65, 152, 0.2)'}}>
+          <div className="max-w-5xl mx-auto text-center" style={{fontFamily: "'Lora', serif", color: '#ccc'}}>
             <p>&copy; 2026 Kara Welch. All rights reserved.</p>
           </div>
         </footer>

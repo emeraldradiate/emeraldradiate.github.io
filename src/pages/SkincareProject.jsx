@@ -4,7 +4,9 @@ function SkincareProject() {
   const projectData = {
     title: "SHINTARO Skincare Website",
     tagline: "A fictional skincare website with three functional product pages, created to showcase web design and UI/UX skills.",
-    video: "/shintaro.mp4",
+    
+    youtubeUrl: "https://www.youtube.com/watch?v=N5yKWBsV0VE",
+    
     overview: [
       "I designed Shintaro as a comprehensive digital storefront for a fictional organic skincare brand. My primary objective was to build a clean and immersive user experience that felt both modern and high end. Using a minimalist aesthetic, I created a desktop web application that highlights natural ingredients through high quality imagery and a disciplined layout.",
       "The site architecture includes a dynamic navigation bar, a scrolling hero section, and interactive product displays. I focused on creating a seamless flow from the landing page to individual product details to mimic a real world shopping journey. Each section was built to reinforce the brand identity of luxury and wellness.",
@@ -52,8 +54,8 @@ function SkincareProject() {
       "Recognized that building for desktop first provides a strong design foundation, but requires a clear plan for future mobile scaling."
     ],
     
-    liveUrl: "#", // Update with actual URL
-    githubUrl: "#" // Update with actual URL if applicable
+    liveUrl: "https://emeraldradiate.github.io/shintaro/", // Update with actual URL
+    githubUrl: "https://github.com/emeraldradiate/shintaro" // Update with actual URL if applicable
   };
 
   return <ProjectDetail data={projectData} />;

@@ -4,7 +4,9 @@ function ColorReducerProject() {
   const projectData = {
     title: "PNG Color Reducer",
     tagline: "A simple C# program that algorithmically reduces the number of colors in an image for file size optimization purposes.",
-    video: "/colorreducer.mp4",
+    
+    youtubeUrl: "https://www.youtube.com/watch?v=0Z_2BzkQQ3w",
+    
     overview: [
       "I developed a PNG Color Reducer as a desktop utility program, designed to optimize image files by reducing their unique color count while maintaining visual fidelity. The application allows users to upload a PNG and specify a target palette size of up to 100 colors to significantly lower the file size. I built the entire tool using C# and the WPF framework for the interface, and integrated the ImageSharp library for high performance pixel manipulation.",
       "The core of the application is a custom implementation of the K-Means Clustering algorithm, which identifies the most dominant colors in any given image. Users can preview the reduced image in real time and regenerate the results until they achieve the perfect balance between quality and optimization. This project serves as a functional tool for web developers or designers who need to streamline their assets for faster loading times.",

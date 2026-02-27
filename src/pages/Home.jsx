@@ -34,8 +34,6 @@ function Home() {
             .hero-text-content {
               max-width: 100% !important;
               margin-left: 0 !important;
-              padding-left: 1rem;
-              padding-right: 1rem;
             }
             
             .hero-text-content p {
@@ -65,13 +63,13 @@ function Home() {
         <Navigation isHomePage={true} />
 
         {/* hero section */}
-        <section className="relative flex items-center px-6 md:px-12 lg:px-24 xl:px-40 pt-32 pb-12 overflow-hidden">
+        <section className="relative flex items-center px-6 md:px-12 lg:px-24 pt-32 pb-12 overflow-hidden">
         {/* gradient bg */}
         <div className="absolute inset-0" style={{background: 'linear-gradient(to bottom right, rgba(134, 65, 152, 0.3), black, rgba(137, 197, 65, 0.3)'}}></div>
         
-        <div className="relative max-w-7xl mx-auto w-full hero-grid grid md:grid-cols-2 gap-12 items-center">
+        <div className="relative max-w-5xl mx-auto w-full hero-grid grid md:grid-cols-2 gap-12 items-center">
           {/* text content, left */}
-          <div className="hero-text-content space-y-6" style={{marginLeft: 'clamp(1rem, 5vw, 5rem)'}}>
+          <div className="hero-text-content space-y-6">
             <div className="relative">
               {/* rotating sparkle :) */}
               <div className="absolute top-0 sparkle-spin" style={{opacity: 0.3, left: '-52px'}}>
@@ -90,7 +88,7 @@ function Home() {
               <p className="text-sm leading-relaxed mb-6" style={{fontFamily: "'Lora', serif", color: '#fff', maxWidth: '400px'}}>
                 I have spent eight years bridging the gap between engineering constraints and brand aesthetics, ensuring products are both powerful under the hood, as well as intuitive and accessible on the surface.
               </p>
-              <a href="#contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-full transition group" style={{fontFamily: "'Lora', serif", backgroundColor: '#864198', color: '#fff', fontSize: '14px'}} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#89C541'} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#864198'}>
+              <a href="mailto:knwelch00@yahoo.com" className="inline-flex items-center gap-2 px-6 py-3 rounded-full transition group" style={{fontFamily: "'Lora', serif", backgroundColor: '#864198', color: '#fff', fontSize: '14px'}} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#89C541'} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#864198'}>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <circle cx="11" cy="11" r="8"></circle>
                   <path d="m21 21-4.35-4.35"></path>
@@ -101,7 +99,7 @@ function Home() {
           </div>
 
           {/* photo with bg txt */}
-          <div className="hero-photo relative flex justify-start items-center" style={{marginLeft: 'clamp(1rem, 7.5vw, 8rem)'}}>
+          <div className="hero-photo relative flex justify-end items-center">
             {/* photo container */}
             <div className="relative" style={{width: '400px', height: '400px'}}>
               
@@ -132,7 +130,7 @@ function Home() {
       </section>
 
       {/* projects!! */}
-      <section id="projects" className="py-12 px-6 bg-black">
+      <section id="projects" className="py-12 px-6 md:px-12 lg:px-24 bg-black">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-4xl mb-3" style={{fontFamily: "'Limelight', sans-serif", color: '#89C541', letterSpacing: '0.0em'}}>Featured Projects</h2>
@@ -220,8 +218,8 @@ function Home() {
       </section>
 
       {/* footer */}
-      <footer className="py-6 px-6 bg-black" style={{borderTop: '1px solid rgba(134, 65, 152, 0.2)'}}>
-        <div className="max-w-7xl mx-auto text-center" style={{fontFamily: "'Lora', serif", color: '#ccc'}}>
+      <footer className="py-6 px-6 md:px-12 lg:px-24 bg-black" style={{borderTop: '1px solid rgba(134, 65, 152, 0.2)'}}>
+        <div className="max-w-5xl mx-auto text-center" style={{fontFamily: "'Lora', serif", color: '#ccc'}}>
           <p>&copy; 2026 Kara Welch. All rights reserved.</p>
         </div>
       </footer>
