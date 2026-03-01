@@ -419,7 +419,7 @@ function ProjectDetail({ data }) {
       {features && features.length > 0 && (
         <section className="py-12 px-6 md:px-12 lg:px-24 bg-black">
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-3xl mb-10 text-center" style={{fontFamily: "'Limelight', sans-serif", color: '#89C541'}}>
+            <h2 className="text-3xl mb-10 text-right md:text-center" style={{fontFamily: "'Limelight', sans-serif", color: '#89C541'}}>
               Key Features
             </h2>
             <div className="flex flex-col md:flex-row gap-6 md:gap-0 items-start justify-center">
@@ -536,7 +536,7 @@ function ProjectDetail({ data }) {
 
       {/* next project nav */}
       <section className="py-12 px-6 md:px-12 lg:px-24 bg-black" style={{borderTop: '1px solid rgba(134, 65, 152, 0.2)'}}>
-        <div className="max-w-5xl mx-auto text-center">
+        <div className="max-w-5xl mx-auto text-right">
           <Link 
             to="/"
             className="inline-flex items-center gap-1.5 px-6 py-3 rounded-full transition text-base"
@@ -547,14 +547,14 @@ function ProjectDetail({ data }) {
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M19 12H5M12 19l-7-7 7-7"/>
             </svg>
-            View All Projects
+            Back to Home
           </Link>
         </div>
       </section>
 
       {/* footer */}
       <footer className="py-6 px-6 md:px-12 lg:px-24 bg-black" style={{borderTop: '1px solid rgba(134, 65, 152, 0.2)'}}>
-        <div className="max-w-5xl mx-auto text-center" style={{fontFamily: "'Lora', serif", color: '#ccc'}}>
+        <div className="max-w-5xl mx-auto text-center" style={{fontFamily: "'Lora', serif", color: '#864198'}}>
           <p>&copy; 2026 Kara Welch. All rights reserved.</p>
         </div>
       </footer>

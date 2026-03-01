@@ -5,25 +5,11 @@ import PropTypes from 'prop-types';
 function Navigation({ isHomePage = false }) {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  // Render navigation link based on whether we're on home page or not
+  // Render navigation link - always use React Router Link for internal navigation
   const NavLink = ({ href, children }) => {
-    if (isHomePage) {
-      return (
-        <a 
-          href={href} 
-          className="transition text-base" 
-          style={{fontFamily: "'Lora', serif", color: '#89C541'}}
-          onClick={() => setMenuOpen(false)}
-          onMouseEnter={(e) => e.target.style.color = '#864198'} 
-          onMouseLeave={(e) => e.target.style.color = '#89C541'}
-        >
-          {children}
-        </a>
-      );
-    }
     return (
       <Link 
-        to={`/${href}`} 
+        to={href} 
         className="transition text-base" 
         style={{fontFamily: "'Lora', serif", color: '#89C541'}}
         onClick={() => setMenuOpen(false)}
@@ -79,8 +65,8 @@ function Navigation({ isHomePage = false }) {
         <div className="desktop-nav max-w-7xl mx-auto px-6 py-5 flex justify-center items-center gap-10">
           {/* left menu */}
           <div className="flex items-center gap-6">
-            <NavLink href={isHomePage ? "/about" : "about"}>About Me</NavLink>
-            <NavLink href={isHomePage ? "/technical" : "technical"}>Technical Work</NavLink>
+            <NavLink href="/about">About Me</NavLink>
+            <NavLink href="/technical">Technical Work</NavLink>
           </div>
 
           {/* center logo */}
@@ -90,7 +76,7 @@ function Navigation({ isHomePage = false }) {
 
           {/* right menu */}
           <div className="flex items-center gap-6">
-            <NavLink href={isHomePage ? "/creative" : "creative"}>Creative Work</NavLink>
+            <NavLink href="/creative">Creative Work</NavLink>
             <a 
               href="mailto:knwelch00@yahoo.com"
               className="transition text-base" 
@@ -126,9 +112,9 @@ function Navigation({ isHomePage = false }) {
         {menuOpen && (
           <div className="mobile-nav bg-black/95 border-t" style={{borderColor: 'rgba(137, 197, 65, 0.2)'}}>
             <div className="px-6 py-4 flex flex-col gap-4">
-              <NavLink href={isHomePage ? "/about" : "about"}>About Me</NavLink>
-              <NavLink href={isHomePage ? "/technical" : "technical"}>Technical Work</NavLink>
-              <NavLink href={isHomePage ? "/creative" : "creative"}>Creative Work</NavLink>
+              <NavLink href="/about">About Me</NavLink>
+              <NavLink href="/technical">Technical Work</NavLink>
+              <NavLink href="/creative">Creative Work</NavLink>
               <a 
                 href="mailto:knwelch00@yahoo.com"
                 className="transition text-base" 

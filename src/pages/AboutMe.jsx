@@ -5,7 +5,7 @@ import Navigation from '../components/Navigation';
 function AboutMe() {
   const aboutData = {
     title: "About Me",
-    tagline: "A shallow dive into the person behind the curtain. Or something.",
+    tagline: "Left brain meets right brain, and they actually get along.",
     
     overview: [
       "Nice to meet you! I'm Kara, a multifaceted creative technologist and a recent graduate from Kennesaw State University with a dual degree in Computer Science and Graphic Design. My unique background allows me to bridge the gap between complex technical architecture and user centric design. I am perfectly equipped for full stack development and passionate about building digital products that are as high performing as they are visually stunning.",
@@ -60,21 +60,44 @@ function AboutMe() {
   } = aboutData;
 
   return (
-    <div className="min-h-screen bg-black">
-      {/* nav */}
-      <Navigation isHomePage={false} />
+    <>
+      <style>
+        {`
+          @keyframes spin {
+            from {
+              transform: rotate(0deg);
+            }
+            to {
+              transform: rotate(360deg);
+            }
+          }
+          .sparkle-spin {
+            animation: spin 8s linear infinite;
+          }
+        `}
+      </style>
+      <div className="min-h-screen bg-black">
+        {/* nav */}
+        <Navigation isHomePage={false} />
 
-      {/* hero section */}
-      <section className="relative pt-34 pb-12 px-6 md:px-12 lg:px-24 overflow-hidden">
-        <div className="absolute inset-0" style={{background: 'linear-gradient(to bottom right, rgba(134, 65, 152, 0.3), black, rgba(137, 197, 65, 0.3)'}}></div>
-        
-        <div className="relative max-w-5xl mx-auto">
-          <div className="mb-10">
-            <h1 className="text-5xl md:text-6xl mb-3" style={{fontFamily: "'Limelight', sans-serif", color: '#89C541', letterSpacing: '-0.02em'}}>
-              {title}
-            </h1>
+        {/* hero section */}
+        <section className="relative pt-34 pb-12 px-6 md:px-12 lg:px-24 overflow-hidden">
+          <div className="absolute inset-0" style={{background: 'linear-gradient(to bottom right, rgba(134, 65, 152, 0.3), black, rgba(137, 197, 65, 0.3)'}}></div>
+          
+          <div className="relative max-w-5xl mx-auto">
+            <div className="mb-10 relative">
+              {/* rotating sparkle */}
+              <div className="absolute top-0 sparkle-spin" style={{opacity: 0.3, left: '-52px', zIndex: 0}}>
+                <svg width="160" height="160" viewBox="0 0 200 200" fill="none">
+                  <path d="M100 0L110 90L200 100L110 110L100 200L90 110L0 100L90 90L100 0Z" fill="#864198" />
+                </svg>
+              </div>
+              
+              <h1 className="relative text-5xl md:text-6xl mb-3" style={{fontFamily: "'Limelight', sans-serif", color: '#89C541', letterSpacing: '-0.02em', zIndex: 10}}>
+                {title}
+              </h1>
             {tagline && (
-              <p className="text-sm md:text-base mb-6" style={{fontFamily: "'Lora', serif", color: '#ccc', maxWidth: '50%'}}>
+              <p className="relative text-sm md:text-base mb-6" style={{fontFamily: "'Lora', serif", color: '#ccc', maxWidth: '50%', zIndex: 10}}>
                 {tagline}
               </p>
             )}
@@ -167,7 +190,7 @@ function AboutMe() {
       {uniqueQualities && uniqueQualities.length > 0 && (
         <section className="py-12 px-6 md:px-12 lg:px-24 bg-black">
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-3xl mb-10 text-center" style={{fontFamily: "'Limelight', sans-serif", color: '#89C541'}}>
+            <h2 className="text-3xl mb-10 text-right md:text-center" style={{fontFamily: "'Limelight', sans-serif", color: '#89C541'}}>
               Unique Qualities
             </h2>
             <div className="flex flex-col md:flex-row gap-6 md:gap-0 items-start justify-center">
@@ -218,7 +241,7 @@ function AboutMe() {
 
       {/* back to home */}
       <section className="py-12 px-6 md:px-12 lg:px-24 bg-black" style={{borderTop: '1px solid rgba(134, 65, 152, 0.2)'}}>
-        <div className="max-w-5xl mx-auto text-center">
+        <div className="max-w-5xl mx-auto text-right">
           <Link 
             to="/"
             className="inline-flex items-center gap-1.5 px-6 py-3 rounded-full transition text-base"
@@ -236,11 +259,12 @@ function AboutMe() {
 
       {/* footer */}
       <footer className="py-6 px-6 md:px-12 lg:px-24 bg-black" style={{borderTop: '1px solid rgba(134, 65, 152, 0.2)'}}>
-        <div className="max-w-5xl mx-auto text-center" style={{fontFamily: "'Lora', serif", color: '#ccc'}}>
+        <div className="max-w-5xl mx-auto text-center" style={{fontFamily: "'Lora', serif", color: '#864198'}}>
           <p>&copy; 2026 Kara Welch. All rights reserved.</p>
         </div>
       </footer>
     </div>
+    </>
   );
 }
 

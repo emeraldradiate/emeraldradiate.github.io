@@ -219,7 +219,7 @@ function Home() {
 
       {/* footer */}
       <footer className="py-6 px-6 md:px-12 lg:px-24 bg-black" style={{borderTop: '1px solid rgba(134, 65, 152, 0.2)'}}>
-        <div className="max-w-5xl mx-auto text-center" style={{fontFamily: "'Lora', serif", color: '#ccc'}}>
+        <div className="max-w-5xl mx-auto text-center" style={{fontFamily: "'Lora', serif", color: '#864198'}}>
           <p>&copy; 2026 Kara Welch. All rights reserved.</p>
         </div>
       </footer>

@@ -5,6 +5,7 @@ import SkincareProject from './pages/SkincareProject';
 import ArtistPortfolioProject from './pages/ArtistPortfolioProject';
 import ColorReducerProject from './pages/ColorReducerProject';
 import MindMapProject from './pages/MindMapProject';
+import PortfolioWebsiteProject from './pages/PortfolioWebsiteProject';
 import TechnicalWork from './pages/TechnicalWork';
 import CreativeWork from './pages/CreativeWork';
 import ScrollToTop from './components/ScrollToTop';
@@ -22,6 +23,7 @@ function App() {
         <Route path="/projects/artist-portfolio" element={<ArtistPortfolioProject />} />
         <Route path="/projects/color-reducer" element={<ColorReducerProject />} />
         <Route path="/projects/mind-map" element={<MindMapProject />} />
+        <Route path="/projects/portfolio-website" element={<PortfolioWebsiteProject />} />
         {/* Add more project routes here as you create them */}
       </Routes>
     </Router>

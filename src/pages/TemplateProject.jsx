@@ -10,9 +10,9 @@ function TemplateProject() {
     youtubeUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
     
     overview: [
-      "Placeholder paragraph 1. Replace this with your project overview text.",
-      "Placeholder paragraph 2. Add more context about your project here.",
-      "Placeholder paragraph 3. Describe your design choices and approach."
+      "Paragraph 1",
+      "Paragraph 2",
+      "Paragraph 3"
     ],
     
     divider: "/divide.png", // Optional section divider image

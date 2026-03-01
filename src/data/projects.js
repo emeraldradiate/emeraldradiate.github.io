@@ -30,5 +30,13 @@ export const projects = [
     tags: ["TypeScript", "React", "ReactFlow", "UI/UX", "Web App", "Technical Work"],
     link: "/projects/mind-map",
     image: "/project4.png"
+  },
+  {
+    id: 5,
+    title: "Portfolio Website",
+    description: "A responsive React portfolio showcasing technical and creative work with modern animations and intuitive navigation.",
+    tags: ["React", "Vite", "React Router", "UI/UX", "CSS", "Web App", "Mobile Design", "Desktop Design", "Technical Work", "Creative Work"],
+    link: "/projects/portfolio-website",
+    image: "/project5.png"
   }
 ];
