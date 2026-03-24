@@ -38,5 +38,13 @@ export const projects = [
     tags: ["React", "Vite", "React Router", "UI/UX", "CSS", "Web App", "Mobile Design", "Desktop Design", "Technical Work", "Creative Work"],
     link: "/projects/portfolio-website",
     image: "/project5.png"
+  },
+  {
+    id: 6,
+    title: "Color App",
+    description: "A TypeScript and React web app for PNG color reduction with intelligent palette swapping and dithering capabilities.",
+    tags: ["TypeScript", "React", "Image Processing", "Canvas API", "UI/UX", "Web App", "Desktop Design", "Technical Work"],
+    link: "/projects/color-app",
+    image: "/project6.png"
   }
 ];
